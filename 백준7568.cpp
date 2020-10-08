@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include<map>
 
 using namespace std;
 
@@ -7,18 +7,25 @@ int ans(int a){
 
 }
 int main(){
-    int a,d,k;
-    cin >> a;
+    int a, rank;
+    scanf("%d", &a);
 
-    vector<int> v;
-    vector<vector<int>> v1;
-    for(int i=0; i< a; i++){
-        cin >> d;
-        cin >> k;
-        v.push_back(d);
-        v.push_back(k);
-        v1.push_back(v);
+    int *x = new int[a]; 
+    int *y = new int[a];
+
+    for(int i=0; i<a; i++){
+        scanf("%d %d", &x[i], &y[i]);
     }
-    cout<< v1[0][0];
+
+    for(int i=0; i<a; i++){
+        rank=1;
+        for(int j=0; j<a; j++){
+            if(x[i]<x[j] && y[i]<y[j]){
+                rank++;
+            }
+        }
+        printf("%d ",rank);
+    }
+
     return 0;
 }
