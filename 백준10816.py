@@ -31,6 +31,5 @@ Ns.append(10000001)
 for i in Ms:
     lB = lowerBinary(Ns, i, 0, N)
     uB = upperBinary(Ns, i, 0, N)
-    #print(lB,uB)
     cnt = uB-lB
     print(cnt, end = ' ')
